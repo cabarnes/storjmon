@@ -21,3 +21,8 @@ python_version = "3.5"
 
 [dev-packages]
 
+prospector = "*"
+pytest-flask = "*"
+pytest-mock = "*"
+pytest-cov = "*"
+responses = "*"

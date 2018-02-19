@@ -1,13 +1,16 @@
 """Interface to the Storj API."""
-import requests
-
+from http import HTTPStatus
 from urllib.parse import urljoin
+
+import requests
 
 
 class ApiException(Exception):
     """Exception contacting Storj API."""
 
     def __init__(self, status_code, message):
+        """Constructor."""
+        super().__init__()
         self._status_code = status_code
         self._message = message
 
@@ -26,6 +29,7 @@ class StorjApi(object):
     """Interface to the Storj API."""
 
     def __init__(self, base_url='https://api.storj.io'):
+        """Constructor."""
         self.base_url = base_url
 
     def get_contact_info(self, node_id):
@@ -33,7 +37,7 @@ class StorjApi(object):
         response = requests.get(
             urljoin(self.base_url, '/contacts/{}'.format(node_id)))
 
-        if response.status_code == 200:
+        if response.status_code == HTTPStatus.OK:
             return response.json()
         else:
             raise ApiException(response.status_code, response.json()['error'])

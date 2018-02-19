@@ -1,1 +1,1 @@
-"""Storj API library."""
+"""Common package."""

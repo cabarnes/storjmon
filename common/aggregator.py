@@ -9,9 +9,9 @@ class Aggregator(object):
     """Store data over time from Storj."""
 
     def __init__(self):
+        """Constructor."""
         self.api = StorjApi()
         self.scheduler = BackgroundScheduler()
-        self.job = None
 
         self.scheduler.start()
 
@@ -25,12 +25,23 @@ class Aggregator(object):
 
     def start(self, node_id):
         """Start storing data."""
-        if not self.job:
-            self.job = self.scheduler.add_job(
-                self._store_data, 'interval', seconds=1, args=[node_id])
+        if not self.scheduler.get_job(job_id=node_id):
+            self.scheduler.add_job(
+                func=self._store_data,
+                trigger='interval',
+                id=node_id,
+                seconds=1,
+                args=[node_id]
+            )
+            return True
 
-    def stop(self):
+        return False
+
+    def stop(self, node_id):
         """Stop storing data."""
-        if self.job:
-            self.job.remove()
-            self.job = None
+        job = self.scheduler.get_job(job_id=node_id)
+        if job:
+            job.remove()
+            return True
+
+        return False
