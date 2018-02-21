@@ -1,4 +1,5 @@
 # StorjMon - Monitor for Storj Nodes
+Preliminary version with only manual updates of node information from the [Storj](https://storj.io/) API.
 
 # Installing Dependencies
 The application uses [pipenv](https://pipenv.readthedocs.io/en/latest/) for dependencies. To initialize an environment, run the following:
