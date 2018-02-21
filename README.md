@@ -10,7 +10,7 @@ To install development dependencies, run the following:
 pipenv install --dev
 ```
 # Running
-The application can be run using a command line or web interface. The application must be run from the virtual environment created by `pipenv`. Before running any commands, launch the `pipenv` shell by running the following:
+The application can be run using a command line interface, web interface, or in [Docker](https://www.docker.com/). The application must be run from the virtual environment created by `pipenv`. Before running any local commands, launch the `pipenv` shell by running the following:
 ```sh
 pipenv shell
 ```
@@ -23,6 +23,17 @@ FLASK_APP=gui/monitor.py python -m flask run
 The command line interface can be started by running the following to see the list of options:
 ```sh
 python -m cli
+```
+## Docker
+The Docker image runs the web interface using [uwsgi](https://uwsgi-docs.readthedocs.io/en/latest/).
+
+The Docker image can be built by running the following:
+```sh
+docker build -t storjmon .
+```
+The image can be started by running the following:
+```sh
+docker run --name storjmon -p 80:80 storjmon
 ```
 # Testing
 Testing is done using [pytest](https://docs.pytest.org/en/latest/) and [prospector](https://prospector.landscape.io/en/master/). To execute the tests, run the following:
