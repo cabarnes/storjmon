@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/cabarnes/storjmon.svg?branch=master)](https://travis-ci.org/cabarnes/storjmon)
 # StorjMon - Monitor for Storj Nodes
 Preliminary version with only manual updates of node information from the [Storj](https://storj.io/) API.
 
