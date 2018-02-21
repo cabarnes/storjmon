@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/cabarnes/storjmon.svg?branch=master)](https://travis-ci.org/cabarnes/storjmon)
 [![Coverage Status](https://coveralls.io/repos/github/cabarnes/storjmon/badge.svg?branch=master)](https://coveralls.io/github/cabarnes/storjmon?branch=master)
+[![Docker Status](https://img.shields.io/docker/build/cabarnes/storjmon.svg)](https://hub.docker.com/r/cabarnes/storjmon/)
 # StorjMon - Monitor for Storj Nodes
 Preliminary version with only manual updates of node information from the [Storj](https://storj.io/) API.
 
@@ -30,11 +31,15 @@ python -m cli
 ## Docker
 The Docker image runs the web interface using [uwsgi](https://uwsgi-docs.readthedocs.io/en/latest/).
 
+The latest Docker image can be downloaded and started by running the following:
+```sh
+docker run --name storjmon -p 80:80 cabarnes/storjmon
+```
 The Docker image can be built by running the following:
 ```sh
 docker build -t storjmon .
 ```
-The image can be started by running the following:
+The locally built image can be started by running the following:
 ```sh
 docker run --name storjmon -p 80:80 storjmon
 ```
