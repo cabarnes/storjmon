@@ -9,8 +9,8 @@
 <body>
     <div id="content">{% block content %}{% endblock %}</div>
 
-    <script type=text/javascript src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
-    <script type=text/javascript src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    <script type=text/javascript src="{{ url_for('static', filename='js/vue.js') }}"></script>
+    <script type=text/javascript src="{{ url_for('static', filename='js/vue-resource.min.js') }}"></script>
     {% block js %}{% endblock %}
 </body>
 </html>
