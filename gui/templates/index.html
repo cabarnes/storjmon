@@ -39,10 +39,3 @@
   </div>
 </div>
 {% endblock %}
-
-{% block js %}
-<script>
-var contactsUrl = '{{ url_for("api.contacts", node_id="") }}';
-</script>
-<script type=text/javascript src="{{ url_for('static', filename='dist/bundle.js') }}"></script>
-{% endblock %}

@@ -1,11 +1,14 @@
-Vue.component('info-item', {
-  props: ['attribute', 'value'],
-  template: '<tr><td>[[ attribute ]]</td><td>[[ value ]]</td></tr>',
-  delimiters: ['[[',']]'],
-})
+import Vue from 'vue';
+import VueResource from 'vue-resource';
+Vue.use(VueResource);
+
+import InfoItem from '../components/InfoItem.vue';
 
 var infoDisplay = new Vue({
   el: '#infoDisplay',
+  components: {
+    InfoItem,
+  },
   data: {
     info: Object,
   },
