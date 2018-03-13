@@ -1,0 +1,23 @@
+{
+  "name": "storjmon",
+  "version": "0.0.1",
+  "description": "Monitor Storj nodes",
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cabarnes/storjmon.git"
+  },
+  "author": "Clifton Barnes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cabarnes/storjmon/issues"
+  },
+  "homepage": "https://github.com/cabarnes/storjmon#readme",
+  "devDependencies": {
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.11"
+  }
+}
