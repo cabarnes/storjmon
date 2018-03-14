@@ -3,6 +3,7 @@ import VueResource from 'vue-resource';
 Vue.use(VueResource);
 
 import InfoItem from '../components/InfoItem.vue';
+import NodeSetting from '../components/NodeSetting.vue';
 
 var infoDisplay = new Vue({
   el: '#infoDisplay',
@@ -16,24 +17,22 @@ var infoDisplay = new Vue({
 
 var nodeSetting = new Vue({
   el: '#nodeSetting',
-  data: {
-    nodeId: '',
-    errorMessage: '',
+  components: {
+    NodeSetting,
   },
   methods: {
     'getInfo': function getInfo() {
       var _this = this;
-      _this.errorMessage = '';
+      _this.$children[0].errorMessage = '';
       infoDisplay.info = null;
 
-      this.$http.get(contactsUrl + this.nodeId)
+      this.$http.get(contactsUrl + _this.$children[0].nodeId)
         .then(function (response) {
           infoDisplay.info = response.data;
         })
         .catch(function (error) {
-          _this.errorMessage = this.nodeId + ': ' + error.statusText;
+          _this.$children[0].errorMessage = _this.$children[0].nodeId + ': ' + error.statusText;
         });
     }
   },
-  delimiters: ['[[',']]'],
 });
