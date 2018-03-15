@@ -21,16 +21,16 @@ var nodeSetting = new Vue({
     NodeSetting,
   },
   methods: {
-    'getInfo': function getInfo() {
+    getInfo() {
       var _this = this;
       _this.$children[0].errorMessage = '';
       infoDisplay.info = null;
 
       this.$http.get(contactsUrl + _this.$children[0].nodeId)
-        .then(function (response) {
+        .then((response) => {
           infoDisplay.info = response.data;
         })
-        .catch(function (error) {
+        .catch((error) => {
           _this.$children[0].errorMessage = _this.$children[0].nodeId + ': ' + error.statusText;
         });
     }

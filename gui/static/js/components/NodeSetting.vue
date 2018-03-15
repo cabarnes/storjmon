@@ -13,14 +13,14 @@
 
 <script>
   export default {
-    data: function() {
+    data() {
       return {
         nodeId: '',
         errorMessage: '',
       }
     },
     methods: {
-      'getInfo': function getInfo() {
+      getInfo() {
         this.$emit('get-info');
       }
     }
