@@ -10,6 +10,9 @@
     props: {
       attribute: String,
       value: [String, Number, Boolean],
-    }
+    },
+    data () {
+      return {};
+    },
   }
 </script>
