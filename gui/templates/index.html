@@ -2,31 +2,7 @@
 {% block title %}Storj Monitor{% endblock %}
 
 {% block content %}
-<div id="nodeSetting" class="row">
-  <div class="col-md-4">
-  </div>
-  <div class="col-md-4">
-    <node-setting v-on:get-info="getInfo"></node-setting>
-  </div>
-  <div class="col-md-4">
-  </div>
-</div>
-<div id="infoDisplay" class="row">
-  <div class="col-md-4">
-  </div>
-  <div class="col-md-4">
-    <table class="table">
-      <tbody>
-        <tr is="info-item"
-          v-for="(value, attribute, index) in info"
-          v-bind:key="index"
-          v-bind:attribute="attribute"
-          v-bind:value="value">
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="col-md-4">
-  </div>
+<div id="app">
+  <app></app>
 </div>
 {% endblock %}

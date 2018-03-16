@@ -1,38 +1,13 @@
 import Vue from 'vue';
-import VueResource from 'vue-resource';
-Vue.use(VueResource);
 
-import InfoItem from '../components/InfoItem.vue';
-import NodeSetting from '../components/NodeSetting.vue';
+import App from '../components/App.vue';
 
-var infoDisplay = new Vue({
-  el: '#infoDisplay',
+new Vue({
+  el: '#app',
   components: {
-    InfoItem,
+    'app': App,
   },
-  data: {
-    info: Object,
-  },
-});
-
-var nodeSetting = new Vue({
-  el: '#nodeSetting',
-  components: {
-    NodeSetting,
-  },
-  methods: {
-    getInfo() {
-      var _this = this;
-      _this.$children[0].errorMessage = '';
-      infoDisplay.info = null;
-
-      this.$http.get(contactsUrl + _this.$children[0].nodeId)
-        .then((response) => {
-          infoDisplay.info = response.data;
-        })
-        .catch((error) => {
-          _this.$children[0].errorMessage = _this.$children[0].nodeId + ': ' + error.statusText;
-        });
-    }
+  mounted() {
+    this.$children[0].contactsUrl = contactsUrl;
   },
 });
