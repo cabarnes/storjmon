@@ -1,0 +1,58 @@
+{
+  "name": "storjmon",
+  "version": "0.0.1",
+  "description": "Monitor Storj nodes",
+  "scripts": {
+    "build": "webpack",
+    "test": "jest",
+    "lint": "eslint js/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cabarnes/storjmon.git"
+  },
+  "author": "Clifton Barnes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cabarnes/storjmon/issues"
+  },
+  "homepage": "https://github.com/cabarnes/storjmon#readme",
+  "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.12",
+    "babel-jest": "^22.4.1",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-module-resolver": "^3.1.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "eslint": "^4.19.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-vue": "^4.3.0",
+    "jest": "^22.4.2",
+    "sinon": "^4.4.6",
+    "vue-jest": "^2.1.1",
+    "vue-loader": "^14.2.1",
+    "vue-template-compiler": "^2.5.15",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.11"
+  },
+  "dependencies": {
+    "vue": "^2.5.15",
+    "vue-resource": "^1.5.0"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "js/components/*.vue"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
+    }
+  }
+}

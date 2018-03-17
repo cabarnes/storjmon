@@ -1,11 +1,22 @@
-language: python
-python:
-  - '3.5'
-install:
-  - pip install pipenv coveralls
-  - pipenv install --dev
-script:
-  - pipenv run pytest
-  - pipenv run prospector
-after_success:
-  - coveralls
+matrix:
+  include:
+    - language: python
+      python: '3.5'
+      install:
+        - pip install pipenv coveralls
+        - pipenv install --dev
+      script:
+        - pipenv run pytest
+        - pipenv run prospector
+      after_success:
+        - coveralls
+    - language: node_js
+      node_js:
+        - '6'
+      before_install:
+        - cd gui/static
+      install:
+        - npm install
+      script:
+        - npm test
+        - npm run lint

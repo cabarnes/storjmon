@@ -106,3 +106,9 @@ venv.bak/
 
 # editor files
 *.swp
+
+# node modules
+node_modules/
+
+# coverage output
+coverage/

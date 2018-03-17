@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "airbnb-base",
+    "plugin:vue/essential"
+  ],
+  "globals": {
+    "contactsUrl": "/api/v1/contacts/"
+  },
+  "env": {
+    "jest": true
+  }
+}
