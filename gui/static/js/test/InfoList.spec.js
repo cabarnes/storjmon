@@ -13,18 +13,18 @@ describe('InfoList.vue', () => {
     const wrapper = mount(InfoList);
     wrapper.setData({
       info: {
-        'reputation': 1000,
-        'spaceAvailable': true,
-        'userAgent': '8.7.1',
+        reputation: 1000,
+        spaceAvailable: true,
+        userAgent: '8.7.1',
       },
     });
 
     expect(wrapper.findAll('table').length).toBe(1);
-    var trArray = wrapper.findAll('tr');
+    const trArray = wrapper.findAll('tr');
     expect(trArray.length).toBe(3);
 
     /* row 1 */
-    var tdArray = trArray.at(0).findAll('td');
+    let tdArray = trArray.at(0).findAll('td');
     expect(tdArray.length).toBe(2);
     expect(tdArray.at(0).text()).toBe('reputation');
     expect(tdArray.at(1).text()).toBe('1000');
@@ -41,4 +41,4 @@ describe('InfoList.vue', () => {
     expect(tdArray.at(0).text()).toBe('userAgent');
     expect(tdArray.at(1).text()).toBe('8.7.1');
   });
-})
+});

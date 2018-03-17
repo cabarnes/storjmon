@@ -6,7 +6,7 @@ import NodeSetting from '../components/NodeSetting.vue';
 import InfoList from '../components/InfoList.vue';
 
 describe('App.vue', () => {
-  var server = null;
+  let server = null;
 
   beforeEach(() => {
     server = sinon.fakeServer.create();
@@ -17,15 +17,15 @@ describe('App.vue', () => {
   });
 
   it('retrieves info', (done) => {
-    var responseData = {
-      'reputation': 1000,
-      'spaceAvailable': true,
-      'userAgent': '8.7.1',
+    const responseData = {
+      reputation: 1000,
+      spaceAvailable: true,
+      userAgent: '8.7.1',
     };
-    var response = [
+    const response = [
       200,
       {
-        'Content-type': 'application/json'
+        'Content-type': 'application/json',
       },
       JSON.stringify(responseData),
     ];
@@ -50,11 +50,11 @@ describe('App.vue', () => {
   });
 
   it('handles an API error', (done) => {
-    var errorMessage = 'Error retrieving information: Contact not found';
-    var response = [
+    const errorMessage = 'Error retrieving information: Contact not found';
+    const response = [
       404,
       {
-        'Content-type': 'application/json'
+        'Content-type': 'application/json',
       },
       errorMessage,
     ];
@@ -72,10 +72,10 @@ describe('App.vue', () => {
     server.respond();
 
     setTimeout(() => {
-      expect(wrapper.find(NodeSetting).vm.errorMessage).toBe('1234: ' + errorMessage);
+      expect(wrapper.find(NodeSetting).vm.errorMessage).toBe(`1234: ${errorMessage}`);
       expect(wrapper.find(InfoList).vm.info).toBe(null);
       done();
     }, 1);
   });
-})
+});
 

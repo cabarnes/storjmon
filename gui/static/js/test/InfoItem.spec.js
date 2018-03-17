@@ -7,10 +7,10 @@ describe('InfoItem.vue', () => {
       propsData: {
         attribute: 'testAttribute',
         value: true,
-      }
+      },
     });
     const tdArray = wrapper.findAll('td');
     expect(tdArray.at(0).text()).toBe('testAttribute');
     expect(tdArray.at(1).text()).toBe('true');
   });
-})
+});

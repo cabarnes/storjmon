@@ -26,4 +26,4 @@ describe('NodeSetting.vue', () => {
     wrapper.find('button').trigger('click');
     expect(wrapper.emitted('get-info').length).toBe(1);
   });
-})
+});
