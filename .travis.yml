@@ -1,8 +1,7 @@
 matrix:
   include:
     - language: python
-      python:
-        - '3.5'
+      python: '3.5'
       install:
         - pip install pipenv coveralls
         - pipenv install --dev
@@ -16,7 +15,8 @@ matrix:
         - '6'
       before_script:
         - cd gui/static
-      script:
+      install:
         - npm install --dev
+      script:
         - npm test
         - npm run lint
