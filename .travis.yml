@@ -17,5 +17,6 @@ matrix:
       before_script:
         - cd gui/static
       script:
+        - npm install --dev
         - npm test
         - npm run lint
