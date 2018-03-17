@@ -16,9 +16,7 @@ matrix:
       before_install:
         - cd gui/static
       install:
-        - npm install --dev
-      before_script:
-        - cd gui/static
+        - npm install --only=dev
       script:
         - npm test
         - npm run lint
