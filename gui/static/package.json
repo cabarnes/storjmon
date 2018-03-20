@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "Monitor Storj nodes",
   "scripts": {
-    "build": "webpack",
+    "dev": "webpack --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
     "test": "jest",
     "lint": "eslint js/"
   },
@@ -31,11 +32,13 @@
     "eslint-plugin-vue": "^4.3.0",
     "jest": "^22.4.2",
     "sinon": "^4.4.6",
+    "uglifyjs-webpack-plugin": "^1.2.4",
     "vue-jest": "^2.1.1",
     "vue-loader": "^14.2.1",
     "vue-template-compiler": "^2.5.15",
     "webpack": "^4.1.1",
-    "webpack-cli": "^2.0.11"
+    "webpack-cli": "^2.0.11",
+    "webpack-merge": "^4.1.2"
   },
   "dependencies": {
     "vue": "^2.5.15",
