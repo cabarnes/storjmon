@@ -1,4 +1,4 @@
-FROM python:3.5-alpine
+FROM python:3.6-alpine
 MAINTAINER Clifton Barnes <clifton.a.barnes@gmail.com>
 
 ENV FLASK_APP=/app/gui/monitor.py
@@ -13,7 +13,7 @@ COPY . /app
 
 WORKDIR /app/gui/static
 
-RUN apk add --no-cache nodejs && \
+RUN apk add --no-cache nodejs npm && \
     npm install && npm run build && \
     rm -rf node_modules && \
     apk del --purge nodejs
