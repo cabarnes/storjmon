@@ -1,9 +1,9 @@
-import { shallow } from '@vue/test-utils';
+import { shallowMount } from '@vue/test-utils';
 import InfoItem from '../components/InfoItem.vue';
 
 describe('InfoItem.vue', () => {
   it('renders attribute and value', () => {
-    const wrapper = shallow(InfoItem, {
+    const wrapper = shallowMount(InfoItem, {
       propsData: {
         attribute: 'testAttribute',
         value: true,
