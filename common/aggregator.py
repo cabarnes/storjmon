@@ -5,7 +5,7 @@ from .storj import ApiException
 from .storj import StorjApi
 
 
-class Aggregator(object):
+class Aggregator():
     """Store data over time from Storj."""
 
     def __init__(self):
