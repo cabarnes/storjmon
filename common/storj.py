@@ -25,7 +25,7 @@ class ApiException(Exception):
         return self._message
 
 
-class StorjApi(object):
+class StorjApi():
     """Interface to the Storj API."""
 
     def __init__(self, base_url='https://api.storj.io'):
@@ -39,5 +39,5 @@ class StorjApi(object):
 
         if response.status_code == HTTPStatus.OK:
             return response.json()
-        else:
-            raise ApiException(response.status_code, response.json()['error'])
+
+        raise ApiException(response.status_code, response.json()['error'])
